@@ -1,15 +1,20 @@
 # frozen_string_literal: true
 
 require './bowling'
+require './ball'
+require './pins'
 
 # describe
 # it
 # expect
 
-describe Ball do
-  describe 'new_shot' do
-    it 'Genera un numero, y lo guarda como puntuacion' do
-      expect(Ball.shot).not_to be > 11
+describe Scorer do
+  describe 'first_round' do
+    it 'Genera y guarda la puntuacion de la primer ronda' do
+      scorer = Scorer.new
+      balls = Ball.new
+      scorer.first_round(0)
+      expect(balls.shot).to eq(scorer.score)
     end
   end
 end
